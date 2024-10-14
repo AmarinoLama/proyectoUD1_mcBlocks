@@ -1,4 +1,4 @@
-target/
+../Aman/proyectoUD1_mcRecipes/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
