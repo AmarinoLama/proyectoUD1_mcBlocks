@@ -1,16 +1,19 @@
 package edu.badpals.proyectoud1_mcrecipes;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.util.Objects;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws Exception {
+
         stage.setTitle("Minecraft Recipes");
 
         // mostrar una laberl con texto
@@ -24,4 +27,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         Application.launch(args);
     }
+
 }
