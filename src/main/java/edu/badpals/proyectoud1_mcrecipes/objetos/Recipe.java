@@ -1,10 +1,12 @@
 package edu.badpals.proyectoud1_mcrecipes.objetos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Recipes {
+public class Recipe {
 
     @JsonProperty("item")
     private String item;
@@ -16,23 +18,27 @@ public class Recipes {
     private boolean shapeless;
 
     @JsonProperty("recipe")
-    private ArrayList<String> recipe;
+    private List<JsonNode> recipe;
 
-    public Recipes() {
+    public Recipe() {
     }
 
-    public Recipes(int quantity, boolean shapeless, ArrayList<String> recipe, String item) {
+    public Recipe(String item, int quantity, boolean shapeless, List<JsonNode> recipe) {
+        this.item = item;
         this.quantity = quantity;
         this.shapeless = shapeless;
         this.recipe = recipe;
-        this.item = item;
     }
 
-    public ArrayList<String> getRecipe() {
+    public String getItem() {
+        return item;
+    }
+
+    public List<JsonNode> getRecipe() {
         return recipe;
     }
 
-    public boolean getShapeless() {
+    public boolean isShapeless() {
         return shapeless;
     }
 
@@ -40,13 +46,9 @@ public class Recipes {
         return quantity;
     }
 
-    public String getItem() {
-        return item;
-    }
-
     @Override
     public String toString() {
-        return "Recipes{" +
+        return "Recipe{" +
                 "item='" + item + '\'' +
                 ", quantity=" + quantity +
                 ", shapeless=" + shapeless +
