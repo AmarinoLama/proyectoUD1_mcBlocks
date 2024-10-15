@@ -10,15 +10,18 @@ public class Recipes {
     private String item;
 
     @JsonProperty("quantity")
-    private String quantity;
+    private int quantity;
 
     @JsonProperty("shapeless")
-    private String shapeless;
+    private boolean shapeless;
 
     @JsonProperty("recipe")
     private ArrayList<String> recipe;
 
-    public Recipes(String quantity, String shapeless, ArrayList<String> recipe, String item) {
+    public Recipes() {
+    }
+
+    public Recipes(int quantity, boolean shapeless, ArrayList<String> recipe, String item) {
         this.quantity = quantity;
         this.shapeless = shapeless;
         this.recipe = recipe;
@@ -29,11 +32,11 @@ public class Recipes {
         return recipe;
     }
 
-    public String getShapeless() {
+    public boolean getShapeless() {
         return shapeless;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
@@ -45,8 +48,8 @@ public class Recipes {
     public String toString() {
         return "Recipes{" +
                 "item='" + item + '\'' +
-                ", quantity='" + quantity + '\'' +
-                ", shapeless='" + shapeless + '\'' +
+                ", quantity=" + quantity +
+                ", shapeless=" + shapeless +
                 ", recipe=" + recipe +
                 '}';
     }

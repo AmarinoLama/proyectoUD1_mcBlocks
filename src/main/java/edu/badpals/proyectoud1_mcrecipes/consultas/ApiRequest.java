@@ -10,7 +10,7 @@ public class ApiRequest {
 
     private static final String URL = "https://minecraft-api.vercel.app/api/crafting-recipes?item="; // URL de la API
 
-    public static void main(String[] args) throws Exception {
+    public static String recipeRequest() throws Exception {
 
         // Crear un cliente HttpClient
         HttpClient client = HttpClient.newHttpClient();
@@ -26,15 +26,16 @@ public class ApiRequest {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         // Mostrar el JSON en la consola
-        System.out.println(response.body()); // Aquí el body contiene el JSON de respuesta
+        return response.body(); // Aquí el body contiene el JSON de respuesta
     }
 
     public static String itemSearch() {
         Scanner sc = new Scanner(System.in);
         String item;
         System.out.println("Introduce el item que quieres buscar: ");
-        item = sc.nextLine();
-        return item.replaceAll(" ", "%20");
+        //item = sc.nextLine();  // todo CAMBIAR ESTO
+        //return item.replaceAll(" ", "%20");
+        return "Block%20of%20Netherite";  // todo CAMBIAR ESTO
     }
 
 }
