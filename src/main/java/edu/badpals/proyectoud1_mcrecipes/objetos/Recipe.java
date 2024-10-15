@@ -35,7 +35,22 @@ public class Recipe {
     }
 
     public List<JsonNode> getRecipe() {
+        setRecipe();
         return recipe;
+    }
+
+    private void setRecipe() {
+        List<JsonNode> updatedRecipe = new ArrayList<>();
+        for (JsonNode node : recipe) {
+            if (node.isArray() && node.size() > 0) {
+                // Si es una lista, añade el primer elemento de la lista
+                updatedRecipe.add(node.get(0));
+            } else {
+                // Si no es una lista, añade el elemento tal cual
+                updatedRecipe.add(node);
+            }
+        }
+        recipe = updatedRecipe;
     }
 
     public boolean isShapeless() {
