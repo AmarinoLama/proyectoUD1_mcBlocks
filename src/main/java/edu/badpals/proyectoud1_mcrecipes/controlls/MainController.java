@@ -26,7 +26,7 @@ public class MainController {
         Recipe[] recipes = MapeoJson.mapingRecipes();
         System.out.printf(recipes[0].getRecipe().toString());
         setTxtOutput(txtOutput);
-
+        // devuelve un print de la recip
     }
 
     public String getTxtRecip() {
