@@ -6,6 +6,7 @@ module edu.badpals.proyectoud1_mcrecipes {
     requires java.net.http;
 
     opens edu.badpals.proyectoud1_mcrecipes to javafx.fxml;
-    opens edu.badpals.proyectoud1_mcrecipes.objetos to com.fasterxml.jackson.databind;
+    opens edu.badpals.proyectoud1_mcrecipes.controlls to javafx.fxml;
+
     exports edu.badpals.proyectoud1_mcrecipes;
 }
