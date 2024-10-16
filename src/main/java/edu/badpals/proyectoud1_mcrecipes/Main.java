@@ -1,7 +1,5 @@
 package edu.badpals.proyectoud1_mcrecipes;
 
-
-import edu.badpals.proyectoud1_mcrecipes.controlls.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,6 +18,7 @@ public class Main extends Application {
         Scene scene = new Scene(root);
 
         stage.setTitle("Minecraft Recipes");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

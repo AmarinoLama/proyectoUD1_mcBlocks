@@ -8,6 +8,7 @@ import edu.badpals.proyectoud1_mcrecipes.objetos.Recipe;
 public class MapeoJson {
 
     public static void main(String[] args) throws Exception {
+        ApiRequest.setItem("Block of Iron");
         Recipe[] recipes = mapingRecipes();
         Item[] items = mapingItems();
         for (Recipe recipe : recipes) {

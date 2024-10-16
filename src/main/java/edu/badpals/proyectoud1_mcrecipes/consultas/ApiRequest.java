@@ -4,21 +4,22 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Scanner;
 
 public class ApiRequest {
 
     private static final String URL = "https://minecraft-api.vercel.app/api/"; // URL de la API
 
+    private static String item;
+
     public static String recipeRequest() throws Exception {
-        return sendRequest("crafting-recipes?item=" + itemSearch());
+        return sendRequest("crafting-recipes?item=" + giveFormat());
     }
 
     public static String itemRequest() throws Exception {
-        String response = sendRequest("blocks?name=" + itemSearch());
+        String response = sendRequest("blocks?name=" + giveFormat());
 
         if(response.equals("[]")) {
-            response = sendRequest("items?name=" + itemSearch());
+            response = sendRequest("items?name=" + giveFormat());
         }
 
         return response;
@@ -42,13 +43,15 @@ public class ApiRequest {
     }
 
     // NO ACEPTA ITEMS QUE USEN MADERA GENÉRICA
-    public static String itemSearch() {
-        Scanner sc = new Scanner(System.in);
-        String item;
-        System.out.println("Introduce el item que quieres buscar: ");
-        //item = sc.nextLine();  // todo CAMBIAR ESTO
-        //return item.replaceAll(" ", "%20");
-        return "Barrel";  // todo CAMBIAR ESTO
+    public static String giveFormat() {
+        return getItem().replaceAll(" ", "%20");
     }
 
+    public static String getItem() {
+        return item;
+    }
+
+    public static void setItem(String item) {
+        ApiRequest.item = item;
+    }
 }
