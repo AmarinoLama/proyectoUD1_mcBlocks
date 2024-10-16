@@ -57,40 +57,48 @@ public class MainController {
     private ImageView imgmidright;
 
     @FXML
-    void btnClicked(ActionEvent event) throws Exception {
+    void btnClicked(ActionEvent event) {
 
-        ApiRequest.setItem(getTxtRecip());
-        Recipe recipe = MapeoJson.mapingRecipes()[0];
+        try {
+            ApiRequest.setItem(getTxtRecip());
+            Recipe recipe = MapeoJson.mapingRecipes()[0];
 
-        ArrayList<String> itemsSearch = new ArrayList<>();
-        itemsSearch.add(recipe.getItem());
+            ArrayList<String> itemsSearch = new ArrayList<>();
+            itemsSearch.add(recipe.getItem());
 
-        for (JsonNode item : recipe.getRecipe()) {
-            itemsSearch.add(item.toString().replace("\"", ""));
-        }
-
-        ArrayList<String> itemsImg = new ArrayList<>();
-        for (String item : itemsSearch) {
-            if (!item.equals("null")) {
-                ApiRequest.setItem(item);
-                Item itemtoSearch = MapeoJson.mapingItems()[0];
-                itemsImg.add(itemtoSearch.getImage());
-            } else {
-                itemsImg.add("https://minecraft-api.vercel.app/images/blocks/air.png");
+            for (JsonNode item : recipe.getRecipe()) {
+                itemsSearch.add(item.toString().replace("\"", ""));
             }
-        }
 
-        setImgRecip(itemsImg.get(0));
-        setImgArrow();
-        setImgTopLeft(itemsImg.get(1));
-        setImgTopCenter(itemsImg.get(2));
-        setImgTopRight(itemsImg.get(3));
-        setImgmidleft(itemsImg.get(4));
-        setImgcenter(itemsImg.get(5));
-        setImgmidright(itemsImg.get(6));
-        setImgbottonleft(itemsImg.get(7));
-        setImgbotton(itemsImg.get(8));
-        setImgbottonright(itemsImg.get(9));
+            ArrayList<String> itemsImg = new ArrayList<>();
+            for (String item : itemsSearch) {
+                if (!item.equals("null")) {
+                    ApiRequest.setItem(item);
+                    Item itemtoSearch = MapeoJson.mapingItems()[0];
+                    itemsImg.add(itemtoSearch.getImage());
+                } else {
+                    itemsImg.add("https://minecraft-api.vercel.app/images/blocks/air.png");
+                }
+            }
+
+            setImgRecip(itemsImg.get(0));
+            setImgArrow();
+            setImgTopLeft(itemsImg.get(1));
+            setImgTopCenter(itemsImg.get(2));
+            setImgTopRight(itemsImg.get(3));
+            setImgmidleft(itemsImg.get(4));
+            setImgcenter(itemsImg.get(5));
+            setImgmidright(itemsImg.get(6));
+            setImgbottonleft(itemsImg.get(7));
+            setImgbotton(itemsImg.get(8));
+            setImgbottonright(itemsImg.get(9));
+        } catch (Exception e) {
+            setTxtRecip(txtRecip);
+        }
+    }
+
+    public void setTxtRecip(TextField txtRecip) {
+        txtRecip.setText("Nombre no válido");
     }
 
     public String getTxtRecip() {

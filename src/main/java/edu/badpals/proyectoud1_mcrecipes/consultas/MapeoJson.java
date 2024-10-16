@@ -19,17 +19,21 @@ public class MapeoJson {
         }
     }
 
-    public static Recipe[] mapingRecipes() throws Exception {
-        // Crear un ObjectMapper
-        ObjectMapper mapper = new ObjectMapper();
+    public static Recipe[] mapingRecipes() {
+        try {
+            // Crear un ObjectMapper
+            ObjectMapper mapper = new ObjectMapper();
 
-        // Obtener el JSON de la respuesta
-        String json = ApiRequest.recipeRequest();
+            // Obtener el JSON de la respuesta
+            String json = ApiRequest.recipeRequest();
 
-        // Mapear el JSON a una instancia de Recipes
-        Recipe[] recipes = mapper.readValue(json, Recipe[].class);
+            // Mapear el JSON a una instancia de Recipes
+            Recipe[] recipes = mapper.readValue(json, Recipe[].class);
 
-        return recipes;
+            return recipes;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public static Item[] mapingItems() throws Exception {
