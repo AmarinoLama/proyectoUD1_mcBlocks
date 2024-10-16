@@ -1,27 +1,22 @@
 package edu.badpals.proyectoud1_mcrecipes.controlls;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class MainController {
 
     @FXML
-    private TextField inputField;
+    private Button btnSearch;
 
     @FXML
-    private Label outputLabel;
+    private TextField txtRecip;
 
-    @FXML
-    private Button search;
-
-    @FXML
-    void initialize(ActionEvent event) {
-        search.setOnAction(e -> {
-            outputLabel.setText("Buscando recetas para " + inputField.getText());
-        });
+    public Button getBtnSearch() {
+        return btnSearch;
     }
 
+    public String getTxtRecip() {
+        return txtRecip.getText();
+    }
 }
