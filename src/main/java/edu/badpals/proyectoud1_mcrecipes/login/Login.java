@@ -45,7 +45,7 @@ public class Login {
 
      */
 
-    public static void creadorProperties() throws NoSuchAlgorithmException, FileNotFoundException {
+    public static void propertiesCreator() throws NoSuchAlgorithmException, FileNotFoundException {
 
         Properties propiedades = new Properties();
 
