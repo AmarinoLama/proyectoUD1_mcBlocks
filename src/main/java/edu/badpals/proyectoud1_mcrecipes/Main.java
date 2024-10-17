@@ -19,7 +19,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/mainview.fxml")));
+        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/loginscene.fxml")));
         Parent root = loader.load();
         Scene scene = new Scene(root);
 
@@ -40,6 +40,8 @@ public class Main extends Application {
         creadorProperties();
 
         System.out.println(validatePass("Administrador","suputamadre"));
+        System.out.println(validatePass("Aman","1234"));
+        System.out.println(validatePass("a","1234"));
     }
 
 }

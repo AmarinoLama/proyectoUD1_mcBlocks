@@ -6,16 +6,25 @@ import edu.badpals.proyectoud1_mcrecipes.consultas.MapeoJson;
 import edu.badpals.proyectoud1_mcrecipes.objetos.Item;
 import edu.badpals.proyectoud1_mcrecipes.objetos.Recipe;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainController {
+
+    @FXML
+    private Button btnSalir;
 
     @FXML
     private Button btnSearch;
@@ -101,6 +110,24 @@ public class MainController {
         } catch (Exception e) {
             setTxtRecip("Nombre no válido");
         }
+    }
+
+    @FXML
+    void btnSalirclicked(ActionEvent event) {
+        /*try {
+            // Cargar el archivo FXML de la nueva escena
+            Parent newSceneParent = FXMLLoader.load(getClass().getResource("/loginscene.fxml"));
+
+            // Crear una nueva escena
+            Scene newScene = new Scene(newSceneParent);
+
+            // Obtener el escenario actual y establecer la nueva escena
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(newScene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
     }
 
     public void setTxtRecip(String text) {

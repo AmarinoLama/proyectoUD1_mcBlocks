@@ -53,7 +53,7 @@ public class Login {
         propiedades.setProperty("Evan", hasher("abc"));
         propiedades.setProperty("Aman", hasher("1234"));
 
-        try (FileOutputStream output = new FileOutputStream("config.properties")) {
+        try (FileOutputStream output = new FileOutputStream("src/main/resources/config.properties")) {
 
             propiedades.store(output, "Usuarios y contraseñas");
         } catch (IOException e) {
@@ -74,31 +74,24 @@ public class Login {
 
         Properties properties = new Properties();
 
-        try (FileInputStream propertiesFile = new FileInputStream("config.properties")) {
+        try (FileInputStream propertiesFile = new FileInputStream("src/main/resources/config.properties")) {
 
             properties.load(propertiesFile);
 
-            String actualPassword = properties.getProperty(user);
-            String inputedPassword = hasher(password);
-
-            if (actualPassword.equals(inputedPassword)) {
-                return true;
-
-            } else {
+            if (!properties.containsKey(user)) {
                 return false;
+            } else {
+
+                String actualPassword = properties.getProperty(user);
+                String inputedPassword = hasher(password);
+
+                return actualPassword.equals(inputedPassword);
             }
 
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchAlgorithmException e) {
+        } catch (NoSuchAlgorithmException | IOException e) {
             throw new RuntimeException(e);
         }
 
-
     }
-
 
 }
