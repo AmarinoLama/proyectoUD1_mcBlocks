@@ -60,6 +60,9 @@ public class MainController {
     void btnClicked(ActionEvent event) {
 
         try {
+
+            // Meterle una imagen o algo que indique que se está cargando
+
             ApiRequest.setItem(getTxtRecip());
             Recipe recipe = MapeoJson.mapingRecipes()[0];
 
@@ -92,13 +95,16 @@ public class MainController {
             setImgbottonleft(itemsImg.get(7));
             setImgbotton(itemsImg.get(8));
             setImgbottonright(itemsImg.get(9));
+
+            // Parar la imagen de carga
+
         } catch (Exception e) {
-            setTxtRecip(txtRecip);
+            setTxtRecip("Nombre no válido");
         }
     }
 
-    public void setTxtRecip(TextField txtRecip) {
-        txtRecip.setText("Nombre no válido");
+    public void setTxtRecip(String text) {
+        this.txtRecip.setText(text);
     }
 
     public String getTxtRecip() {
