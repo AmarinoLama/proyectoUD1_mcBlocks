@@ -59,6 +59,12 @@ public class MainController {
     @FXML
     private ImageView imgmidright;
 
+    /*
+
+    btnLoginClicked(ActionEvent event) usa varios métodos ya creados en otros paquetes
+
+     */
+
     @FXML
     void btnClicked(ActionEvent event) {
 

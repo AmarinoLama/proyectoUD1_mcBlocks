@@ -44,6 +44,14 @@ public class ControllerLoginUsuario {
     @FXML
     private Label txtUsuario;
 
+    /*
+
+    btnLoginClicked(ActionEvent event) llama a validatePass() y comprueba si el usuario y la contraseña están en el archivo de configuracion config.properties.
+    Si la validación es correcta, da paso a la siguiente ventana. Y si no, informa de que la contraseña y/o el usuario son incorrectos.
+
+     */
+
+
     @FXML
     void btnLoginClicked(ActionEvent event) throws IOException {
         if (Login.validatePass(lblUsuario.getText(), lblContraseña.getText())) {

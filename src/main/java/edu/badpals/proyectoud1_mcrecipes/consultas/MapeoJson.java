@@ -7,6 +7,12 @@ import edu.badpals.proyectoud1_mcrecipes.objetos.Recipe;
 
 public class MapeoJson {
 
+    /*
+
+
+
+     */
+
     public static void main(String[] args) throws Exception {
         ApiRequest.setItem("Block of Iron");
         Recipe[] recipes = mapingRecipes();
@@ -18,6 +24,15 @@ public class MapeoJson {
             System.out.println(item.getImage());
         }
     }
+
+    /*
+
+    El metodo mapingRecipes() solicita un JSON desde la API de Minecraft, luego utiliza la clase ObjectMapper
+    para convertir ese JSON en un array de objetos Recipe. Si la conversión falla por algún error, el metodo captura la
+    excepción y devuelve null.
+
+     */
+
 
     public static Recipe[] mapingRecipes() {
         try {
@@ -35,6 +50,13 @@ public class MapeoJson {
             return null;
         }
     }
+
+    /*
+
+    El metodo mapingItems() convierte un JSON obtenido de la API de Minecraft en un array de objetos Item utilizando ObjectMapper de Jackson.
+    Configura el mapeo para ignorar propiedades desconocidas en el JSON y lanza una excepción si ocurre algún error durante el proceso.
+
+     */
 
     public static Item[] mapingItems() throws Exception {
         // Crear un ObjectMapper
