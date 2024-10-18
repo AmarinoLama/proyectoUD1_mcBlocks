@@ -3,10 +3,13 @@ package edu.badpals.proyectoud1_mcrecipes.objetos;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Recipe {
+public class Recipe implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @JsonProperty("item")
     private String item;
