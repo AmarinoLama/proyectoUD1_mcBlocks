@@ -80,7 +80,10 @@ public class MainController {
             // Meterle una imagen o algo que indique que se está cargando
 
             ApiRequest.setItem(getTxtRecip());
-            Recipe recipe = MapeoJson.mapingRecipes()[0];
+            Recipe[] recipes = MapeoJson.mapingRecipes();
+            Integer num = MapeoJson.getCorrectCraft(recipes);
+
+            Recipe recipe = recipes[num];
 
             ArrayList<String> itemsSearch = new ArrayList<>();
             itemsSearch.add(recipe.getItem());

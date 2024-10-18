@@ -47,14 +47,18 @@ public class LoadLastOne {
     }
 
     public static void saveXML(String block) throws Exception {
-
         saveJson(block);
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonNode = objectMapper.readTree(new File("src/main/loads/" + block + ".json"));
 
+        // Check if the root node is an array
+        if (jsonNode.isArray()) {
+            // Wrap the array in a root element
+            jsonNode = objectMapper.createObjectNode().set("root", jsonNode);
+        }
+
         XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.writeValue(new File("src/main/loads/" + block + ".xml"), jsonNode);
-
     }
 }

@@ -19,8 +19,6 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        // c6c6c6 - color fondo
-
         FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/loginscene.fxml")));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -32,18 +30,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
+    public static void main(String[] args) {
         Application.launch(args);
-        Minimain();
     }
-
-    public static void Minimain() throws FileNotFoundException, NoSuchAlgorithmException {
-
-        creadorProperties();
-
-        System.out.println(validatePass("Administrador","Renaido"));
-        System.out.println(validatePass("Aman","1234"));
-        System.out.println(validatePass("a","1234"));
-    }
-
 }
