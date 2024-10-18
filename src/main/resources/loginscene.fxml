@@ -7,24 +7,27 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud1_mcrecipes.controlls.ControllerLoginUsuario">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="304.0" style="-fx-background-color: #c6c6c6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud1_mcrecipes.controlls.ControllerLoginUsuario">
     <children>
-        <Label fx:id="txtUsuario" layoutX="55.0" layoutY="225.0" minHeight="-Infinity" minWidth="-Infinity" text="Usuario" />
-        <PasswordField fx:id="lblContraseña" layoutX="112.0" layoutY="267.0" minHeight="-Infinity" minWidth="-Infinity" />
-        <TextField fx:id="lblUsuario" layoutX="112.0" layoutY="221.0" minHeight="-Infinity" minWidth="-Infinity" />
-        <Label fx:id="txtContraseña" layoutX="40.0" layoutY="271.0" minHeight="-Infinity" minWidth="-Infinity" text="Contraseña" />
-        <Label fx:id="txtCredenciales" layoutX="80.0" layoutY="171.0" minHeight="-Infinity" minWidth="-Infinity" text="Credenciales">
-            <font>
-                <Font size="25.0" />
-            </font>
-        </Label>
-        <ImageView fx:id="imgLogin" fitHeight="103.0" fitWidth="120.0" layoutX="99.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="253.0" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="98.0" AnchorPane.topAnchor="44.0">
+        <Label fx:id="txtUsuario" layoutX="46.0" layoutY="170.0" minHeight="-Infinity" minWidth="-Infinity" text="Usuario" />
+        <PasswordField fx:id="lblContraseña" layoutX="103.0" layoutY="212.0" minHeight="-Infinity" minWidth="-Infinity" />
+        <TextField fx:id="lblUsuario" layoutX="103.0" layoutY="166.0" minHeight="-Infinity" minWidth="-Infinity" />
+        <Label fx:id="txtContraseña" layoutX="31.0" layoutY="216.0" minHeight="-Infinity" minWidth="-Infinity" text="Contraseña" />
+        <ImageView fx:id="imgLogin" fitHeight="54.0" fitWidth="76.0" layoutX="210.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="259.0">
          <image>
-            <Image url="@candado.png" />
+            <Image url="@comandos.gif" />
          </image></ImageView>
-        <Button fx:id="btnLogin" layoutX="126.0" layoutY="348.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginClicked" text="Log in" />
-        <Label fx:id="txtError" layoutX="65.0" layoutY="314.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="221.0" />
+        <Button fx:id="btnLogin" layoutX="128.0" layoutY="273.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginClicked" text="Log in" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="52.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@portada.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="79.0" layoutX="40.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mesaCrafteo.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
