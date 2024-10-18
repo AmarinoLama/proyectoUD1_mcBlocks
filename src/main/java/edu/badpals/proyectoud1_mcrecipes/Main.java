@@ -19,6 +19,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+        // c6c6c6 - color fondo
+
         FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/loginscene.fxml")));
         Parent root = loader.load();
         Scene scene = new Scene(root);

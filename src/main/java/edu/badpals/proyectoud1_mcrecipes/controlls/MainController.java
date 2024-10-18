@@ -1,33 +1,40 @@
 package edu.badpals.proyectoud1_mcrecipes.controlls;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import edu.badpals.proyectoud1_mcrecipes.cargar.LoadLastOne;
 import edu.badpals.proyectoud1_mcrecipes.consultas.ApiRequest;
 import edu.badpals.proyectoud1_mcrecipes.consultas.MapeoJson;
 import edu.badpals.proyectoud1_mcrecipes.objetos.Item;
 import edu.badpals.proyectoud1_mcrecipes.objetos.Recipe;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.util.ArrayList;
 
 public class MainController {
 
     @FXML
+    private SplitMenuButton tlbExportar;
+
+    @FXML
     private Button btnSalir;
+
+    @FXML
+    private Button btnRecuperar;
 
     @FXML
     private Button btnSearch;
 
     @FXML
     private TextField txtRecip;
-
-    @FXML
-    private ImageView imgArrow;
 
     @FXML
     private ImageView imgRecip;
@@ -94,7 +101,6 @@ public class MainController {
             }
 
             setImgRecip(itemsImg.get(0));
-            setImgArrow();
             setImgTopLeft(itemsImg.get(1));
             setImgTopCenter(itemsImg.get(2));
             setImgTopRight(itemsImg.get(3));
@@ -113,43 +119,81 @@ public class MainController {
     }
 
     @FXML
+    void btnRecuperarClicked(ActionEvent event) {
+
+    }
+
+    @FXML
     void btnSalirclicked(ActionEvent event) {
-        /*try {
-            // Cargar el archivo FXML de la nueva escena
-            Parent newSceneParent = FXMLLoader.load(getClass().getResource("/loginscene.fxml"));
-
-            // Crear una nueva escena
-            Scene newScene = new Scene(newSceneParent);
-
-            // Obtener el escenario actual y establecer la nueva escena
-            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            currentStage.setScene(newScene);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+        ((Node) event.getSource()).getScene().getWindow().hide();
     }
 
     public void setTxtRecip(String text) {
         this.txtRecip.setText(text);
     }
 
-    public String getTxtRecip() {
-        return txtRecip.getText();
+    private MenuItem createMenuItem(String text, EventHandler<ActionEvent> event) {
+        MenuItem menuItem = new MenuItem(text);
+        menuItem.setOnAction(event);
+        return menuItem;
     }
 
-    public ImageView getImgRecip() {
-        return imgRecip;
+    @FXML
+    public void initialize() {
+        try {
+            getTlbExportar().getItems().clear();
+            getTlbExportar().getItems().addAll(
+                    createMenuItem("Exportar a JSON", event -> {
+                        try {
+                            LoadLastOne.saveJson(getTxtRecip());
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                        System.out.println("Archivo exportado a JSON");
+                    }),
+
+                    createMenuItem("Exportar a XML", event -> {
+                        try {
+                            LoadLastOne.saveXML(getTxtRecip());
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                        System.out.println("Archivo exportado a XML");
+                    }),
+
+                    createMenuItem("Exportar a TXT", event -> {
+                        try {
+                            LoadLastOne.saveTxt(getTxtRecip());
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                        System.out.println("Archivo exportado a TXT");
+                    }),
+
+                    createMenuItem("Exportar a BIN", event -> {
+                        try {
+                            LoadLastOne.saveBin(getTxtRecip());
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                        System.out.println("Archivo exportado a BIN");
+                    }));
+        } catch (Exception e){
+            System.out.println("El archivo no se pudo exportar o ya existe");
+        }
+    }
+
+    public SplitMenuButton getTlbExportar() {
+        return tlbExportar;
+    }
+
+    public String getTxtRecip() {
+        return txtRecip.getText();
     }
 
     public void setImgRecip(String url) {
         this.imgRecip = imgRecip;
         imgRecip.setImage(new Image(url));
-    }
-
-    public void setImgArrow() {
-        Image image = new Image("/flecha.png");
-        this.imgArrow.setImage(image);
     }
 
     public void setImgTopCenter(String url) {
