@@ -16,17 +16,17 @@
         <Label fx:id="txtContraseña" layoutX="31.0" layoutY="216.0" minHeight="-Infinity" minWidth="-Infinity" text="Contraseña" />
         <ImageView fx:id="imgLogin" fitHeight="54.0" fitWidth="76.0" layoutX="210.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="259.0">
          <image>
-            <Image url="@comandos.gif" />
+            <Image url="@pictures/comandos.gif" />
          </image></ImageView>
         <Button fx:id="btnLogin" layoutX="128.0" layoutY="273.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginClicked" text="Log in" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="52.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@portada.png" />
+            <Image url="@pictures/portada.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="54.0" fitWidth="79.0" layoutX="40.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@mesaCrafteo.png" />
+            <Image url="@pictures/mesaCrafteo.png" />
          </image>
       </ImageView>
     </children>

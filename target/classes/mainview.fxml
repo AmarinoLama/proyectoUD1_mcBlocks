@@ -18,12 +18,12 @@
          <children>
             <ImageView fitHeight="205.0" fitWidth="523.0" layoutX="161.0" layoutY="-74.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@minecraft.png" />
+                  <Image url="@pictures/minecraft.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="284.0" fitWidth="693.0" layoutX="190.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Crafting3x3.jpg" />
+                  <Image url="@pictures/Crafting3x3.jpg" />
                </image>
             </ImageView>
             <Button fx:id="btnSearch" layoutX="453.0" layoutY="87.0" mnemonicParsing="false" onAction="#btnClicked" text="Buscar" />
@@ -48,17 +48,17 @@
             </SplitMenuButton>
             <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="234.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@papel.png" />
+                  <Image url="@pictures/papel.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="115.0" fitWidth="129.0" layoutX="575.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@bee.png" />
+                  <Image url="@pictures/bee.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="219.0" fitWidth="169.0" layoutX="14.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@zombie.png" />
+                  <Image url="@pictures/zombie.png" />
                </image>
             </ImageView>
          </children>

@@ -2,6 +2,7 @@ package edu.badpals.proyectoud1_mcrecipes.controlls;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import edu.badpals.proyectoud1_mcrecipes.cargar.LoadLastOne;
+import edu.badpals.proyectoud1_mcrecipes.cargar.SaveState;
 import edu.badpals.proyectoud1_mcrecipes.consultas.ApiRequest;
 import edu.badpals.proyectoud1_mcrecipes.consultas.MapeoJson;
 import edu.badpals.proyectoud1_mcrecipes.objetos.Item;
@@ -17,9 +18,13 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainController {
+
+    private static ArrayList<String> itemsSearched = new ArrayList<>();
 
     @FXML
     private SplitMenuButton tlbExportar;
@@ -103,16 +108,9 @@ public class MainController {
                 }
             }
 
-            setImgRecip(itemsImg.get(0));
-            setImgTopLeft(itemsImg.get(1));
-            setImgTopCenter(itemsImg.get(2));
-            setImgTopRight(itemsImg.get(3));
-            setImgmidleft(itemsImg.get(4));
-            setImgcenter(itemsImg.get(5));
-            setImgmidright(itemsImg.get(6));
-            setImgbottonleft(itemsImg.get(7));
-            setImgbotton(itemsImg.get(8));
-            setImgbottonright(itemsImg.get(9));
+            setItemsSearched(itemsImg);
+
+            setAllImages(itemsImg);
 
             // Parar la imagen de carga
 
@@ -122,13 +120,17 @@ public class MainController {
     }
 
     @FXML
-    void btnRecuperarClicked(ActionEvent event) {
-
+    void btnRecuperarClicked(ActionEvent event) throws Exception {
+        ArrayList<String> loadInfo = SaveState.loadState();
+        setTxtRecip(loadInfo.getFirst());
+        loadInfo.removeFirst();
+        setAllImages(loadInfo);
     }
 
     @FXML
     void btnSalirclicked(ActionEvent event) {
         ((Node) event.getSource()).getScene().getWindow().hide();
+        SaveState.saveLastState(getTxtRecip());
     }
 
     public void setTxtRecip(String text) {
@@ -186,6 +188,14 @@ public class MainController {
         }
     }
 
+    public static ArrayList<String> getItemsSearched() {
+        return itemsSearched;
+    }
+
+    public void setItemsSearched(ArrayList<String> itemsSearched) {
+        MainController.itemsSearched = itemsSearched;
+    }
+
     public SplitMenuButton getTlbExportar() {
         return tlbExportar;
     }
@@ -195,8 +205,8 @@ public class MainController {
     }
 
     public void setImgRecip(String url) {
-        this.imgRecip = imgRecip;
-        imgRecip.setImage(new Image(url));
+        Image image = new Image(url);
+        this.imgRecip.setImage(image);
     }
 
     public void setImgTopCenter(String url) {
@@ -242,5 +252,18 @@ public class MainController {
     public void setImgcenter(String url) {
         Image image = new Image(url);
         this.imgcenter.setImage(image);
+    }
+
+    public void setAllImages(ArrayList<String> urls) {
+        setImgRecip(urls.get(0));
+        setImgTopLeft(urls.get(1));
+        setImgTopCenter(urls.get(2));
+        setImgTopRight(urls.get(3));
+        setImgmidleft(urls.get(4));
+        setImgcenter(urls.get(5));
+        setImgmidright(urls.get(6));
+        setImgbottonleft(urls.get(7));
+        setImgbotton(urls.get(8));
+        setImgbottonright(urls.get(9));
     }
 }
