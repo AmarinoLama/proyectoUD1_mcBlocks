@@ -12,26 +12,6 @@ import java.util.Arrays;
 public class MapeoJson {
 
     /*
-
-
-
-     */
-
-    public static void main(String[] args) throws Exception {
-        ApiRequest.setItem("Diamond Pickaxe");
-        Recipe[] recipes = mapingRecipes();
-
-        for (Recipe recipe : recipes) {
-            System.out.println(recipe.getRecipe());
-        }
-
-        Integer num = getCorrectCraft(recipes);
-
-        System.out.println("a" + recipes[num].getRecipe());
-
-    }
-
-    /*
         Función que se encarga de elegir el crafteo correcto de los items con durabilidad, debido a que en la API de Minecraft las armaduras tienen
         dos crafteos (el primero es el bueno) y las herramientas tambien tienen dos crafteos (el segundo es el bueno). Por lo que hay que arreglar
         eso teniendo en cuenta que las herramientas y armaduras de Netherite no tienen crafteo, dado que solo admiten fusión.

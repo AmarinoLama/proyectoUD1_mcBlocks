@@ -1,6 +1,7 @@
 package edu.badpals.proyectoud1_mcrecipes.controlls;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import edu.badpals.proyectoud1_mcrecipes.cargar.Cache;
 import edu.badpals.proyectoud1_mcrecipes.cargar.LoadLastOne;
 import edu.badpals.proyectoud1_mcrecipes.cargar.SaveState;
 import edu.badpals.proyectoud1_mcrecipes.consultas.ApiRequest;
@@ -82,37 +83,45 @@ public class MainController {
 
         try {
 
-            // Meterle una imagen o algo que indique que se está cargando
+            if (Cache.existsCache(getTxtRecip())) {
 
-            ApiRequest.setItem(getTxtRecip());
-            Recipe[] recipes = MapeoJson.mapingRecipes();
-            Integer num = MapeoJson.getCorrectCraft(recipes);
+                ArrayList<String> itemsImg = Cache.loadCache(getTxtRecip());
+                itemsImg.removeFirst();
+                setAllImages(itemsImg);
 
-            Recipe recipe = recipes[num];
+            } else {
 
-            ArrayList<String> itemsSearch = new ArrayList<>();
-            itemsSearch.add(recipe.getItem());
+                ApiRequest.setItem(getTxtRecip());
+                Recipe[] recipes = MapeoJson.mapingRecipes();
+                Integer num = MapeoJson.getCorrectCraft(recipes);
 
-            for (JsonNode item : recipe.getRecipe()) {
-                itemsSearch.add(item.toString().replace("\"", ""));
-            }
+                Recipe recipe = recipes[num];
 
-            ArrayList<String> itemsImg = new ArrayList<>();
-            for (String item : itemsSearch) {
-                if (!item.equals("null")) {
-                    ApiRequest.setItem(item);
-                    Item itemtoSearch = MapeoJson.mapingItems()[0];
-                    itemsImg.add(itemtoSearch.getImage());
-                } else {
-                    itemsImg.add("https://minecraft-api.vercel.app/images/blocks/air.png");
+                ArrayList<String> itemsSearch = new ArrayList<>();
+                itemsSearch.add(recipe.getItem());
+
+                for (JsonNode item : recipe.getRecipe()) {
+                    itemsSearch.add(item.toString().replace("\"", ""));
                 }
+
+                ArrayList<String> itemsImg = new ArrayList<>();
+                for (String item : itemsSearch) {
+                    if (!item.equals("null")) {
+                        ApiRequest.setItem(item);
+                        Item itemtoSearch = MapeoJson.mapingItems()[0];
+                        itemsImg.add(itemtoSearch.getImage());
+                    } else {
+                        itemsImg.add("https://minecraft-api.vercel.app/images/blocks/air.png");
+                    }
+                }
+
+                setItemsSearched(itemsImg);
+
+                setAllImages(itemsImg);
+
+                Cache.saveFileCache(itemsImg, getTxtRecip());
+
             }
-
-            setItemsSearched(itemsImg);
-
-            setAllImages(itemsImg);
-
-            // Parar la imagen de carga
 
         } catch (Exception e) {
             setTxtRecip("Nombre no válido");
@@ -120,11 +129,15 @@ public class MainController {
     }
 
     @FXML
-    void btnRecuperarClicked(ActionEvent event) throws Exception {
-        ArrayList<String> loadInfo = SaveState.loadState();
-        setTxtRecip(loadInfo.getFirst());
-        loadInfo.removeFirst();
-        setAllImages(loadInfo);
+    void btnRecuperarClicked(ActionEvent event) {
+        try {
+            ArrayList<String> loadInfo = SaveState.loadState();
+            setTxtRecip(loadInfo.getFirst());
+            loadInfo.removeFirst();
+            setAllImages(loadInfo);
+        } catch (Exception e) {
+            System.out.println("No se pudo recuperar el estado, porque no has buscado nada anteriormente");
+        }
     }
 
     @FXML

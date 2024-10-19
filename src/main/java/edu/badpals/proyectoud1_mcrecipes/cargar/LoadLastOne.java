@@ -12,13 +12,6 @@ import static edu.badpals.proyectoud1_mcrecipes.consultas.MapeoJson.mapingRecipe
 
 public class LoadLastOne {
 
-    public static void main(String[] args) throws Exception {
-        saveJson("Block of Iron");
-        saveTxt("Block of Iron");
-        saveBin("Block of Iron");
-        saveXML("Block of Iron");
-    }
-
     public static void saveJson(String block) throws Exception {
         ApiRequest.setItem(block);
         String json = ApiRequest.recipeRequest();

@@ -50,19 +50,24 @@ public class ApiRequest {
 
      */
 
-    private static String sendRequest(String endpoint) throws Exception {
+    private static String sendRequest(String endpoint) {
 
-        HttpClient client = HttpClient.newHttpClient();
+        try {
+            HttpClient client = HttpClient.newHttpClient();
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(URL + endpoint))
-                .header("Content-Type", "application/json")
-                .GET()
-                .build();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(URL + endpoint))
+                    .header("Content-Type", "application/json")
+                    .GET()
+                    .build();
 
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        return response.body();
+            return response.body();
+        } catch (Exception e) {
+            System.out.println("Error al hacer la petición");
+            return null;
+        }
     }
 
 
