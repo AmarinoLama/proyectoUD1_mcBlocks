@@ -1,0 +1,11 @@
+Nombre no válido
+https://minecraft-api.vercel.app/images/items/netherite_pickaxe.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/items/netherite_pickaxe.png
+https://minecraft-api.vercel.app/images/items/netherite_pickaxe.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
