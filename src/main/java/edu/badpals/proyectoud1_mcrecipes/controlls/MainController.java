@@ -128,6 +128,10 @@ public class MainController {
         }
     }
 
+    /*
+    * Botón que al ser presionado llama al método loadState() de la clase SaveState
+     */
+
     @FXML
     void btnRecuperarClicked(ActionEvent event) {
         try {
@@ -139,6 +143,10 @@ public class MainController {
             System.out.println("No se pudo recuperar el estado, porque no has buscado nada anteriormente");
         }
     }
+
+    /*
+    * Botón que al ser presionado cierra la ventana actual y guarda el estado actual
+     */
 
     @FXML
     void btnSalirclicked(ActionEvent event) {
@@ -155,6 +163,10 @@ public class MainController {
         menuItem.setOnAction(event);
         return menuItem;
     }
+
+    /*
+    * Método que inicializa el menú de exportación
+     */
 
     @FXML
     public void initialize() {
@@ -266,6 +278,10 @@ public class MainController {
         Image image = new Image(url);
         this.imgcenter.setImage(image);
     }
+
+    /*
+    * Método que recibe un ArrayList de Strings con las urls de las imágenes y las asigna a las variables de la clase
+     */
 
     public void setAllImages(ArrayList<String> urls) {
         setImgRecip(urls.get(0));
