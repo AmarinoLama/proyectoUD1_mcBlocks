@@ -10,6 +10,10 @@ import java.util.ArrayList;
 
 public class SaveState {
 
+    /*
+    * Método que obtiene la lista de items buscados y el item actual y los guarda en un archivo de texto
+     */
+
     public static void saveLastState(String item) {
         try {
             ArrayList<String> itemsImg = MainController.getItemsSearched();
@@ -18,6 +22,10 @@ public class SaveState {
             System.out.println("Error al guardar el estado");
         }
     }
+
+    /*
+    * Método encargado de generar el archivo de texto guardando la lista de las imagenes y el nombre del item
+    */
 
     public static void saveFile(ArrayList<String> itemsImg, String item) throws Exception {
 
@@ -28,6 +36,10 @@ public class SaveState {
         }
         writer.close();
     }
+
+    /*
+    * Método encargado de leer el archivo de texto y retornar la lista de items buscados
+     */
 
     public static ArrayList<String> loadState() throws Exception {
         BufferedReader br = new BufferedReader(new FileReader("src/main/resources/lastState.txt"));
