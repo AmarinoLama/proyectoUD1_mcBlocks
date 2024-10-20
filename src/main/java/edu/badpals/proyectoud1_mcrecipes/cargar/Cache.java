@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 public class Cache {
 
+    /*
+    * Guarda la lista de imagenes junto al nombre del item en un archivo de texto de caché situado en
+    * /src/main/resources/cache/
+     */
+
     public static void saveFileCache(ArrayList<String> itemsImg, String item) {
 
         try {
@@ -21,6 +26,10 @@ public class Cache {
             System.out.println("Error al guardar el archivo de cache");
         }
     }
+
+    /*
+    * Carga el archivo de caché de un item en un ArrayList de Strings los cuales contienen las imagenes y el nombre del item
+     */
 
     public static ArrayList<String> loadCache(String item) {
         try {
@@ -38,6 +47,10 @@ public class Cache {
             return null;
         }
     }
+
+    /*
+    * Comprueba si existe un archivo de caché de un item y devuelve true o false conforme si lo localiza o no
+     */
 
     public static boolean existsCache(String item) {
         try {
