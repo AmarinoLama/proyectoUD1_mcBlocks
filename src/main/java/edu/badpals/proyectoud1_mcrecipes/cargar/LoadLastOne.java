@@ -12,6 +12,10 @@ import static edu.badpals.proyectoud1_mcrecipes.consultas.MapeoJson.mapingRecipe
 
 public class LoadLastOne {
 
+    /*
+    * Método que guarda el archivo JSON llamando a las respectivas funciones para extraer el JSON de la API
+     */
+
     public static void saveJson(String block) throws Exception {
         ApiRequest.setItem(block);
         String json = ApiRequest.recipeRequest();
@@ -20,6 +24,10 @@ public class LoadLastOne {
         writer.write(json);
         writer.close();
     }
+
+    /*
+    * Método que guarda el archivo TXT mapeando la clase y llamando a toString
+     */
 
     public static void saveTxt(String block) throws Exception {
         ApiRequest.setItem(block);
@@ -30,6 +38,10 @@ public class LoadLastOne {
         writer.close();
     }
 
+    /*
+    * Método que guarda el archivo BIN mapeando la clase y usando ObjectOutputStream
+     */
+
     public static void saveBin(String block) throws IOException {
         ApiRequest.setItem(block);
         Recipe recipes = mapingRecipes()[0];
@@ -39,15 +51,17 @@ public class LoadLastOne {
         escritor.close();
     }
 
+    /*
+    * Método que guarda el archivo XML usando el método anterior para guardar el JSON y luego mapear a XML
+     */
+
     public static void saveXML(String block) throws Exception {
         saveJson(block);
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonNode = objectMapper.readTree(new File("src/main/loads/" + block + ".json"));
 
-        // Check if the root node is an array
         if (jsonNode.isArray()) {
-            // Wrap the array in a root element
             jsonNode = objectMapper.createObjectNode().set("root", jsonNode);
         }
 
