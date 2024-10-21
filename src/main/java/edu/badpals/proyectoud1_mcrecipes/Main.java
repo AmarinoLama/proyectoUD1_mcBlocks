@@ -26,6 +26,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    // --module-path C:\Users\a23amanlv\javafx-sdk-23.0.1\lib --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media"
+
     public static void main(String[] args) {
         Application.launch(args);
     }
