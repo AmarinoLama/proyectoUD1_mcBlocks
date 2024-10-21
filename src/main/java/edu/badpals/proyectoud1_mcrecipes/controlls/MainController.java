@@ -20,7 +20,6 @@ import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainController {
@@ -71,6 +70,9 @@ public class MainController {
 
     @FXML
     private ImageView imgmidright;
+
+    @FXML
+    private TextField txtNomFich;
 
     /*
 
@@ -175,42 +177,42 @@ public class MainController {
             getTlbExportar().getItems().addAll(
                     createMenuItem("Exportar a JSON", event -> {
                         try {
-                            LoadLastOne.saveJson(getTxtRecip());
+                            LoadLastOne.saveJson(getTxtRecip(), getTxtNomFich());
                         } catch (Exception e) {
                             throw new RuntimeException(e);
                         }
-                        System.out.println("Archivo exportado a JSON");
                     }),
 
                     createMenuItem("Exportar a XML", event -> {
                         try {
-                            LoadLastOne.saveXML(getTxtRecip());
+                            LoadLastOne.saveXML(getTxtRecip(), getTxtNomFich());
                         } catch (Exception e) {
                             throw new RuntimeException(e);
                         }
-                        System.out.println("Archivo exportado a XML");
                     }),
 
                     createMenuItem("Exportar a TXT", event -> {
                         try {
-                            LoadLastOne.saveTxt(getTxtRecip());
+                            LoadLastOne.saveTxt(getTxtRecip(), getTxtNomFich());
                         } catch (Exception e) {
                             throw new RuntimeException(e);
                         }
-                        System.out.println("Archivo exportado a TXT");
                     }),
 
                     createMenuItem("Exportar a BIN", event -> {
                         try {
-                            LoadLastOne.saveBin(getTxtRecip());
+                            LoadLastOne.saveBin(getTxtRecip(), getTxtNomFich());
                         } catch (Exception e) {
                             throw new RuntimeException(e);
                         }
-                        System.out.println("Archivo exportado a BIN");
                     }));
         } catch (Exception e){
             System.out.println("El archivo no se pudo exportar o ya existe");
         }
+    }
+
+    public String getTxtNomFich() {
+        return txtNomFich.getText();
     }
 
     public static ArrayList<String> getItemsSearched() {

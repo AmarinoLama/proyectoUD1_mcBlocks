@@ -1,0 +1,1 @@
+Recipe{item='Block of Netherite', quantity=1, shapeless=false, recipe=["Netherite Ingot", "Netherite Ingot", "Netherite Ingot", "Netherite Ingot", "Netherite Ingot", "Netherite Ingot", "Netherite Ingot", "Netherite Ingot", "Netherite Ingot"]}
