@@ -8,6 +8,7 @@ import edu.badpals.proyectoud1_mcrecipes.objetos.Recipe;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MapeoJson {
 
@@ -15,24 +16,55 @@ public class MapeoJson {
         Función que se encarga de elegir el crafteo correcto de los items con durabilidad, debido a que en la API de Minecraft las armaduras tienen
         dos crafteos (el primero es el bueno) y las herramientas tambien tienen dos crafteos (el segundo es el bueno). Por lo que hay que arreglar
         eso teniendo en cuenta que las herramientas y armaduras de Netherite no tienen crafteo, dado que solo admiten fusión.
+
+        SIGUE TENIENDO FALLOS PORQUE LA API ESTÁ MAL DISEÑADA
      */
 
     public static int getCorrectCraft(Recipe[] recipes) {
         if (recipes.length == 1) {
             return 0;
         }
-        ArrayList<String> minerals = new ArrayList<>(Arrays.asList("Diamond", "Netherite", "Gold", "Iron", "Leather"));
+        ArrayList<String> minerals = new ArrayList<>(Arrays.asList("Diamond", "Netherite", "Golden", "Iron", "Leather", "Wooden", "Stone"));
         for (Recipe recipe : recipes) {
             for (JsonNode item : recipe.getRecipe()) {
-                if (item.asText().equals(recipe.getItem()) && !item.asText().contains("Netherite")) {
-                    return 1;
-                } else if (minerals.contains(item.asText())) {
+                if (item.asText().equals(recipe.getItem()) && !minerals.contains("Netherite")) {
                     return 0;
+                } else if (minerals.contains(item.asText())) {
+                    return 1;
                 }
             }
         }
         return 0;
     }
+
+    /*// Función que filtra los objetos cuya receta no contenga el item
+    public static List<Recipe> filterRecipesWithoutItem(List<Recipe> recipes) {
+        List<Recipe> validRecipes = new ArrayList<>();
+
+        // Recorremos cada objeto en la lista
+        for (Recipe recipeObj : recipes) {
+            String item = recipeObj.getItem();
+            List<String> recipe = new ArrayList<>();
+            recipeObj.getRecipe().forEach(node -> recipe.add(node.asText()));
+
+            // Verificar si el item NO está en la receta
+            if (!recipeContainsItem(item, recipe)) {
+                validRecipes.add(recipeObj); // Agregamos a la lista válida si no está presente
+            }
+        }
+
+        return validRecipes;
+    }
+
+    // Función que comprueba si el item está en la receta
+    private static boolean recipeContainsItem(String item, List<String> recipe) {
+        for (String element : recipe) {
+            if (item.equals(element)) {
+                return true; // Retornamos true si encontramos el item en la receta
+            }
+        }
+        return false; // Si no está, retornamos false
+    }*/
 
     /*
 

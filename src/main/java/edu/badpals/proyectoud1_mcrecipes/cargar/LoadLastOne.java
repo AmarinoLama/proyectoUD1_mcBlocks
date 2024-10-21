@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import edu.badpals.proyectoud1_mcrecipes.consultas.ApiRequest;
+import edu.badpals.proyectoud1_mcrecipes.consultas.MapeoJson;
 import edu.badpals.proyectoud1_mcrecipes.controlls.MainController;
 import edu.badpals.proyectoud1_mcrecipes.objetos.Recipe;
 
@@ -42,7 +43,7 @@ public class LoadLastOne {
             String fileName = (nameFile != null && !nameFile.isEmpty()) ? nameFile : block;
 
             ApiRequest.setItem(block);
-            Recipe recipes = mapingRecipes()[0];
+            Recipe recipes = mapingRecipes()[MapeoJson.getCorrectCraft(mapingRecipes())];
 
             BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/loads/" + fileName + ".txt"));
             writer.write(recipes.toString());
