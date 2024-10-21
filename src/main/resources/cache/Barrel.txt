@@ -1,0 +1,11 @@
+Barrel
+https://minecraft-api.vercel.app/images/blocks/barrel.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/oak_slab.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/oak_slab.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png

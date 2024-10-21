@@ -89,6 +89,7 @@ public class MainController {
 
                 ArrayList<String> itemsImg = Cache.loadCache(getTxtRecip());
                 itemsImg.removeFirst();
+                setItemsSearched(itemsImg);
                 setAllImages(itemsImg);
 
             } else {

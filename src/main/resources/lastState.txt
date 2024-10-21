@@ -1,1 +1,11 @@
 Block of Netherite
+https://minecraft-api.vercel.app/images/blocks/netherite_block.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
+https://minecraft-api.vercel.app/images/items/netherite_ingot.png
