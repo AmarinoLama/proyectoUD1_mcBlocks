@@ -52,15 +52,12 @@ Este paquete tiene la lógica detrás del encriptado y log-in del usuario. Actua
 Por último, en este paquete es se encuentran las clases que crearán objetos tipo Item y Recipe. 
 
 ##### Como usar el proyecto 
-Abrimos el terminal:
-```
-$cd Desktop
-$mkdir proyectoMCRecipes
-$cd proyectoMCRecipes
-$git clone https://github.com/AmarinoLama/proyectoUD1_mcRecipes.git
-$cd proyectoUD1_mcRecipes
-$java -jar [METER NOMBRE DEL JAVA  JAR QUE GENEREMOS AQUÍ]
-```
+Necesitamos [InteliJ](https://www.jetbrains.com/idea/) y [JavaFx](https://gluonhq.com/products/javafx/) para poder hacer funcionar el proyecto:
+
+Añadimos esta línea a en el apartado de ejecutar programa de intelij [RUTA] es donde se encuentra tú javafx instalado
+`--module-path="[RUTA]javafx-sdk-21.0.5\lib" --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media"`
+Usamos el siguiente comando en el CMD
+`java --module-path="C:\Program Files (x86)\javafx-sdk-23.0.1\lib" --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media" -jar .\out\artifacts\proyectoUD1_mcRecipes_jar\proyectoUD1_mcRecipes.jar` 
 
 Nos logueamos usando un usuario y contraseña predefinidos:
 Administrador - renaido
