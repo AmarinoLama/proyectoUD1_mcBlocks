@@ -1,7 +1,7 @@
 # Minecraft Recipes
 #### Por Aman Vilariño y Evan Silva
 
-Minecraft Recipes es un proyecto diseñado para ofrecer asistencia a la hora de encontrar recetas para diferentes bloques, herramientas y armaduras dentro del juego [Minecraft](https://www.minecraft.net/es-es).El proyecto está desarrollado de modo que sigue un diseño  centrado en hacer el código ampliable y extendible, fácil de manipular, cambiar o mejorar. Para esto, se ha usado un un algoritmo que hace peticiones a una [API externa](https://minecraft-api.vercel.app/api/) que provee archivos JSON con la información necesaria. 
+Minecraft Recipes es un proyecto diseñado para ofrecer asistencia a la hora de encontrar recetas para diferentes bloques, herramientas y armaduras dentro del juego [Minecraft](https://www.minecraft.net/es-es). El proyecto está desarrollado de modo que sigue un diseño  centrado en hacer el código ampliable y extendible, fácil de manipular, cambiar o mejorar. Para esto, se ha usado un un algoritmo que hace peticiones a una [API externa](https://minecraft-api.vercel.app/api/) que provee archivos JSON con la información necesaria. 
 
 Utilizamos un set-up de JavaFX que nos permite crear ventanas emergentes, asignarles botones y darle tamaño y estética a la aplicación.
 
@@ -52,13 +52,12 @@ Este paquete tiene la lógica detrás del encriptado y log-in del usuario. Actua
 Por último, en este paquete es se encuentran las clases que crearán objetos tipo Item y Recipe. 
 
 ##### Como usar el proyecto 
-Abrimos el terminal:
-```
-$cd Desktop
-$cd proyectoMCRecipes
-$cd proyectoUD1_mcRecipes
-$java -jar [METER NOMBRE DEL JAVA  JAR QUE GENEREMOS AQUÍ]
-```
+Necesitamos [InteliJ](https://www.jetbrains.com/idea/) y [JavaFx](https://gluonhq.com/products/javafx/) para poder hacer funcionar el proyecto:
+
+Añadimos esta línea a en el apartado de ejecutar programa de intelij [RUTA] es donde se encuentra tú javafx instalado
+`--module-path="[RUTA]javafx-sdk-21.0.5\lib" --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media"`
+Usamos el siguiente comando en el CMD
+`java --module-path="C:\Program Files (x86)\javafx-sdk-23.0.1\lib" --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media" -jar .\out\artifacts\proyectoUD1_mcRecipes_jar\proyectoUD1_mcRecipes.jar` 
 
 Nos logueamos usando un usuario y contraseña predefinidos:
 Administrador - renaido
@@ -88,6 +87,10 @@ El proyecto se ha desarrollado en su mayoria utilizando el modo de trabajo "Pair
 
 
 El programa goza de casos test realizados, entre otras, para que el login funcione.
+
+<img src="images/Tests.png">
+
+
 - *Uso de la aplicación offline*
 - *Almacenamiento del último estado de ejecución de la aplicación*
 
@@ -102,7 +105,9 @@ Con el uso del paquete Login, y un stage pre-aplicación, el usuario puede logue
 
 ##### Propuestas de mejora:
 
-TODO
+- Hacer que a la hora de exportare el archivo se mueva a descargas.
+- Añadir un método para registrar usuarios y guardarlos.
+- Crear un .exe para que sea ejecutable en cualquier momento.
 
 ##### Conclusiones y opinión del trabajo realizado. Incluid dedicación temporal y cualificación estimada.
 
