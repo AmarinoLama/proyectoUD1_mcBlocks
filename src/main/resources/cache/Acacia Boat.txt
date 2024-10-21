@@ -1,0 +1,11 @@
+Acacia Boat
+https://minecraft-api.vercel.app/images/items/acacia_boat.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/acacia_planks.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/acacia_planks.png
+https://minecraft-api.vercel.app/images/blocks/acacia_planks.png
+https://minecraft-api.vercel.app/images/blocks/acacia_planks.png
+https://minecraft-api.vercel.app/images/blocks/acacia_planks.png

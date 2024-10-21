@@ -1,0 +1,11 @@
+Crafting Table
+https://minecraft-api.vercel.app/images/blocks/crafting_table.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/oak_planks.png
+https://minecraft-api.vercel.app/images/blocks/air.png

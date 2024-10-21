@@ -5,6 +5,12 @@ Minecraft Recipes es un proyecto diseñado para ofrecer asistencia a la hora de 
 
 Utilizamos un set-up de JavaFX que nos permite crear ventanas emergentes, asignarles botones y darle tamaño y estética a la aplicación.
 
+Algunos ejemplos del JSON que recibimos de postman:
+<img src="capturasPostman/captura1.png">
+<img src="capturasPostman/captura2.png">
+<img src="capturasPostman/captura3.png">
+
+
 ##### Las caracteristicas del proyecto son:
 - Logearse en la aplicación usando usuarios que estén registrados.
 - Mostrar una receta válida para crear un objeto mediante el sistema de creación que el juego Minecraft.
@@ -25,10 +31,10 @@ $git clone https://github.com/AmarinoLama/proyectoUD1_mcRecipes.git
 Una vez descargado, podremos acceder al proyecto dentro del escritio, en la carpeta que hemos creado.
 
 ##### Arquitectura del proyecto
+El proyecto se ha diseñado cinco paquetes diferentes, **cargar**, **consultas**, **controlls**, **login** y **objetos**.
 
-[IMAGEN AQUÍ DE LOS DIFERENTES PAQUETES]
+<img src="images/Arquitectura.png">
 
-El proyecto se ha diseñado cinco paquetes diferentes, **cargar**, **consultas**, **controlls**, **login** y **objetos**. 
 
 ###### Cargar
 El paquete se centra en ordenar los métodos relacionados con la información que se guarda del proyecto, desde la exportación, hasta los métodos de guardado en diferentes formatos de archivo.
@@ -56,13 +62,16 @@ $java -jar [METER NOMBRE DEL JAVA  JAR QUE GENEREMOS AQUÍ]
 
 Nos logueamos usando un usuario y contraseña predefinidos:
 Administrador - renaido
-[FOTO DEL LOGIN]
+
+<img src="images/Login.png">
 
 Buscamos un bloque, herramienta o armadura en específico:
-[FOTO DE LA BUSQUEDA EXITOSA]
+
+<img src="images/Search.png">
 
 Y podemos exportar el bloque a cualquier formato de estos cuatro:
-[FOTO DE la exportación y la carpeta dónde se encuentra]
+
+<img src="images/Exportar.png">
 
 ##### Reparto de tareas
 

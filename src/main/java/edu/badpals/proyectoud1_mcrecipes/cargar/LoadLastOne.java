@@ -20,7 +20,7 @@ public class LoadLastOne {
         ApiRequest.setItem(block);
         String json = ApiRequest.recipeRequest();
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/loads/" + block + ".json"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/loads/" + block + ".json"));
         writer.write(json);
         writer.close();
     }
@@ -33,7 +33,7 @@ public class LoadLastOne {
         ApiRequest.setItem(block);
         Recipe recipes = mapingRecipes()[0];
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/loads/" + block + ".txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/loads/" + block + ".txt"));
         writer.write(recipes.toString());
         writer.close();
     }
@@ -46,7 +46,7 @@ public class LoadLastOne {
         ApiRequest.setItem(block);
         Recipe recipes = mapingRecipes()[0];
 
-        ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream("src/main/loads/" + block + ".bin"));
+        ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream("src/main/resources/loads/" + block + ".bin"));
         escritor.writeObject(recipes);
         escritor.close();
     }
@@ -59,13 +59,13 @@ public class LoadLastOne {
         saveJson(block);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        JsonNode jsonNode = objectMapper.readTree(new File("src/main/loads/" + block + ".json"));
+        JsonNode jsonNode = objectMapper.readTree(new File("src/main/resources/loads/" + block + ".json"));
 
         if (jsonNode.isArray()) {
             jsonNode = objectMapper.createObjectNode().set("root", jsonNode);
         }
 
         XmlMapper xmlMapper = new XmlMapper();
-        xmlMapper.writeValue(new File("src/main/loads/" + block + ".xml"), jsonNode);
+        xmlMapper.writeValue(new File("src/main/resources/loads/" + block + ".xml"), jsonNode);
     }
 }

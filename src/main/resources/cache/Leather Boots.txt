@@ -1,0 +1,11 @@
+Leather Boots
+https://minecraft-api.vercel.app/images/items/leather_boots.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/items/leather.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/items/leather.png
+https://minecraft-api.vercel.app/images/items/leather.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/items/leather.png
