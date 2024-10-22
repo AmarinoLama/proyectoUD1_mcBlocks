@@ -1,0 +1,11 @@
+Arrow
+https://minecraft-api.vercel.app/images/items/arrow.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/items/flint.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/items/stick.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/blocks/air.png
+https://minecraft-api.vercel.app/images/items/feather.png
+https://minecraft-api.vercel.app/images/blocks/air.png

@@ -55,10 +55,12 @@ Por último, en este paquete es se encuentran las clases que crearán objetos ti
 Necesitamos [InteliJ](https://www.jetbrains.com/idea/) y [JavaFx](https://gluonhq.com/products/javafx/) para poder hacer funcionar el proyecto:
 
 Añadimos esta línea a en el apartado de ejecutar programa de intelij [RUTA] es donde se encuentra tú javafx instalado
-`--module-path="[RUTA]javafx-sdk-21.0.5\lib" --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media"`
-Usamos el siguiente comando en el CMD
-`java --module-path="C:\Program Files (x86)\javafx-sdk-23.0.1\lib" --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media" -jar .\out\artifacts\proyectoUD1_mcRecipes_jar\proyectoUD1_mcRecipes.jar` 
 
+```--module-path="[RUTA]javafx-sdk-21.0.5\lib" --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media"
+Usamos el siguiente comando en el CMD
+`java --module-path="C:\Program Files (x86)\javafx-sdk-23.0.1\lib" --add-modules="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing,javafx.media" -jar .\out\artifacts\proyectoUD1_mcRecipes_jar\proyectoUD1_mcRecipes.jar 
+
+```
 Nos logueamos usando un usuario y contraseña predefinidos:
 Administrador - renaido
 
@@ -72,11 +74,19 @@ Y podemos exportar el bloque a cualquier formato de estos cuatro:
 
 <img src="images/Exportar.png">
 
+## Flowchart de la aplicación
+
+<img src="images/Step1.png">
+<img src="images/Step2.png">
+
 ##### Reparto de tareas
 
 El proyecto se ha desarrollado en su mayoria utilizando el modo de trabajo "Pair Programming", dónde solo hay un teclado para escribir, y hay un piloto y copiloto, el piloto programa, y el copiloto consulta documentación y código. Aún así, hay partes que se han desarrollado por su cuenta, pero siguiendo un estlo escalable y modificable, haciendo que el código sea mantenible a futuro. 
 
-[EXTENDER CON LO QUE HEMOS HECHO INDEPENDIENTEMENTE]
+Aman se ha encargado del paquete cargar y todos sus métodos.
+Evan se ha encargado del paquete Login y todos su métodos. 
+
+Ambos han contribuido a la arquitectura de la aplicación, Aman apoyándose en una soltura mayor a la hora de picar la mayor parte del código código mas tedioso, y Evan a la hora de diseñar el flow de la aplicación, para que sea escalable y modificable, reutilizando código, así como la creación del readme.md.
 
 ##### Extras realizados:
 
@@ -89,6 +99,8 @@ El proyecto se ha desarrollado en su mayoria utilizando el modo de trabajo "Pair
 El programa goza de casos test realizados, entre otras, para que el login funcione.
 
 <img src="images/Tests.png">
+
+Flow de la aplicación
 
 
 - *Uso de la aplicación offline*
@@ -105,10 +117,13 @@ Con el uso del paquete Login, y un stage pre-aplicación, el usuario puede logue
 
 ##### Propuestas de mejora:
 
-- Hacer que a la hora de exportare el archivo se mueva a descargas.
+- Hacer que a la hora de exportar el archivo se mueva a descargas.
 - Añadir un método para registrar usuarios y guardarlos.
 - Crear un .exe para que sea ejecutable en cualquier momento.
+- Arreglar getCorrectCraft()
 
 ##### Conclusiones y opinión del trabajo realizado. Incluid dedicación temporal y cualificación estimada.
 
-TODO
+Ha sido un proyecto dónde el cuerpo principal ha sido mucho más sencillo que los extras, y la mayor parte del problema ha sido a la hora de lidiar en como utilizar la información. 
+
+Al tener que hacer varias request a diferentes partes de la misma API, el punto central ha sido el usar la información de la rama [RECIPES] y conseguir las imagenes de cada objeto, que se encontraba dentro de la rama [ITEMS] y [BLOCKS], por lo que mezclar tres busquedas de API en una ha sido un problema a tener en cuenta, y que añade una carga de tiempo a la hora de manejar las request a la API, haciendo que se tarde bastante tiempo en conseguir una respuesta y el código se ejecute. 

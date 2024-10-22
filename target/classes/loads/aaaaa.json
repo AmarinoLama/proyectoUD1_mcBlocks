@@ -1,0 +1,18 @@
+[
+  {
+    "item": "Arrow",
+    "quantity": 4,
+    "shapeless": false,
+    "recipe": [
+      null,
+      "Flint",
+      null,
+      null,
+      "Stick",
+      null,
+      null,
+      "Feather",
+      null
+    ]
+  }
+]
