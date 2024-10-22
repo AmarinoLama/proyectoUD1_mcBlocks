@@ -7,8 +7,8 @@ Utilizamos un set-up de JavaFX que nos permite crear ventanas emergentes, asigna
 
 Algunos ejemplos del JSON que recibimos de postman:
 <img src="capturasPostman/captura1.png">
-<img src="capturasPostman/captura2.png">
-<img src="capturasPostman/captura3.png">
+<img src="capturasPostman/Captura2.png">
+<img src="capturasPostman/Captura3.png">
 
 
 ##### Las caracteristicas del proyecto son:
